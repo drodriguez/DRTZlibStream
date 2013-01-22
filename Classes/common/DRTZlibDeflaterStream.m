@@ -7,6 +7,7 @@
 //
 
 #import "DRTZlibDeflaterStream.h"
+#import "DRTZlibStreamErrors.h"
 
 #include <zlib.h>
 
@@ -22,7 +23,6 @@ static const NSInteger kChunkSize = 512;
 {
   z_stream _stream;
   BOOL _isClosed;
-  NSMutableData *_buffer;
 }
 
 - (NSInteger)totalInputBytes
@@ -66,95 +66,100 @@ static const NSInteger kChunkSize = 512;
 
 - (NSData *)writeData:(NSData *)inData
 {
-  NSMutableData *outData = [NSMutableData dataWithCapacity:kChunkSize];
-  int ret;
-  BOOL done = NO;
+  return [self writeData:inData error:nil];
+}
 
+- (NSData *)writeData:(NSData *)inData error:(NSError *__autoreleasing *)error
+{
+  NSMutableData *outData = [NSMutableData dataWithCapacity:kChunkSize];
+  [self writeData:inData into:outData error:error];
+  return [outData copy];
+}
+
+- (void)writeData:(NSData *)inData into:(NSMutableData *)outData error:(NSError *__autoreleasing *)error;
+{
   _stream.avail_in = [inData length];
   _stream.next_in = (Bytef *)[inData bytes];
 
-  do
+  while (_stream.avail_in > 0)
   {
-    ret = [self deflateWithFlush:Z_NO_FLUSH];
-    switch (ret)
+    int err = [self deflateWithFlush:Z_NO_FLUSH into:outData error:error];
+    if (err == Z_STREAM_END)
     {
-      case Z_OK:
-        [outData appendData:_buffer];
-        break;
-      case Z_STREAM_END:
-      case Z_BUF_ERROR:
-        if (_buffer)
-        {
-          [outData appendData:_buffer];
-        }
-        done = YES;
-        break;
-      case Z_NEED_DICT:
-      case Z_ERRNO:
-      case Z_DATA_ERROR:
-      case Z_MEM_ERROR:
-      case Z_VERSION_ERROR:
-      case Z_STREAM_ERROR:
-        done = YES;
-        _buffer = nil;  // FIXME: maybe we can give some more info to the consumer
+      break;
     }
-  } while (!done);
-
-  return outData;
+  }
 }
 
 - (NSData *)flush
 {
+  return [self flushWithError:nil];
+}
+
+- (NSData *)flushWithError:(NSError *__autoreleasing *)error
+{
   NSMutableData *outData = [NSMutableData dataWithCapacity:kChunkSize];
+  [self flushInto:outData error:error];
+  return [outData copy];
+}
+
+- (void)flushInto:(NSMutableData *)outData error:(NSError *__autoreleasing *)error;
+{
   while (YES)
   {
     _stream.avail_in = 0;
-    int ret = [self deflateWithFlush:Z_SYNC_FLUSH];
-    if (_buffer)
-    {
-      [outData appendData:_buffer];
-    }
-    if ((long long)_stream.total_out - (long long)_stream.avail_out < kChunkSize)
+    uLong previousTotalOut = _stream.total_out;
+    int ret = [self deflateWithFlush:Z_SYNC_FLUSH into:outData error:error];
+    if (_stream.total_out > previousTotalOut &&
+		_stream.total_out - previousTotalOut < kChunkSize)
     {
       break;
     }
+
     if (ret == Z_STREAM_END)
     {
       break;
     }
   }
-
-  return [outData copy];
 }
 
 - (NSData *)close
 {
-  NSData *result = nil;
+  return [self closeWithError:nil];
+}
+
+- (NSData *)closeWithError:(NSError *__autoreleasing *)error
+{
+  NSMutableData *outData = [[NSMutableData alloc] initWithCapacity:kChunkSize];
+  [self closeInto:outData error:error];
+  return [outData copy];
+}
+
+- (void)closeInto:(NSMutableData *)outData error:(NSError *__autoreleasing *)error
+{
   if (!_isClosed)
   {
     _isClosed = YES;
-    result = [self finish];
+    [self finishInto:outData error:error];
     (void)deflateEnd(&_stream);
   }
-
-  return result;
 }
 
-- (NSData *)finish
+- (void)finishInto:(NSMutableData *)outData error:(NSError *__autoreleasing *)error
 {
   _stream.avail_in = 0;
-  (void)[self deflateWithFlush:Z_FINISH];
-  return [_buffer copy];
+  (void)[self deflateWithFlush:Z_FINISH into:outData error:error];
 }
 
-- (int)deflateWithFlush:(int)flush
+- (int)deflateWithFlush:(int)flush into:(NSMutableData *)outData error:(NSError *__autoreleasing *)error
 {
-  _buffer = [[NSMutableData alloc] initWithLength:kChunkSize];
-  int previousTotalOut = _stream.total_out;
-  _stream.next_out = [_buffer mutableBytes];
+  NSMutableData *buffer = [[NSMutableData alloc] initWithLength:kChunkSize];
+  uLong previousTotalOut = _stream.total_out;
+  _stream.next_out = [buffer mutableBytes];
   _stream.avail_out = kChunkSize;
-  int ret = deflate(&_stream, flush);
-  switch (ret)
+
+  int err = deflate(&_stream, flush);
+  switch (err)
   {
     case Z_OK:
     case Z_STREAM_END:
@@ -164,19 +169,21 @@ static const NSInteger kChunkSize = 512;
       {
         break;
       }
-      // otherwise, fallthrough
-    case Z_NEED_DICT:
-    case Z_ERRNO:
-    case Z_DATA_ERROR:
-    case Z_MEM_ERROR:
-    case Z_VERSION_ERROR:
-    case Z_STREAM_ERROR:
-      _buffer = nil;  // FIXME: maybe we can give some more info to the consumer
+    default:
+      if (error)
+      {
+        // TODO: we should provide more specific info
+        *error = [NSError errorWithDomain:DRTZlibStreamErrorDomain code:DRTErrorCodeDeflate userInfo:nil];
+      }
   }
 
-  [_buffer setLength:_stream.total_out - previousTotalOut];
+  if (_stream.total_out > previousTotalOut)
+  {
+    [buffer setLength:_stream.total_out - previousTotalOut];
+    [outData appendData:buffer];
+  }
 
-  return ret;
+  return err;
 }
 
 @end

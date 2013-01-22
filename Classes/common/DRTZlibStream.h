@@ -9,5 +9,6 @@
 // Include zlib here, so constants are available.
 #include <zlib.h>
 
+#import "DRTZlibStreamErrors.h"
 #import "DRTZlibDeflaterStream.h"
 #import "DRTZlibInflaterStream.h"
