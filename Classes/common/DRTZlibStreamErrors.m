@@ -11,3 +11,4 @@
 NSString *const DRTZlibStreamErrorDomain = @"net.ruido-blanco.DRTZlibStream";
 
 const NSInteger DRTErrorCodeDeflate = 1;
+const NSInteger DRTErrorCodeInflate = 2;

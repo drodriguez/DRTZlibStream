@@ -11,3 +11,4 @@
 extern NSString *const DRTZlibStreamErrorDomain;
 
 extern const NSInteger DRTErrorCodeDeflate;
+extern const NSInteger DRTErrorCodeInflate;

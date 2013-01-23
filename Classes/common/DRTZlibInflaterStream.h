@@ -15,6 +15,9 @@
 @property (nonatomic, assign, readonly) NSInteger totalOutputBytes;
 
 - (NSData *)readFromData:(NSData *)inData;
+- (NSData *)readFromData:(NSData *)inData error:(NSError *__autoreleasing *)error;
+- (void)readFromData:(NSData *)inData into:(NSMutableData *)outData error:(NSError *__autoreleasing *)error;
+
 - (void)close;
 
 @end
