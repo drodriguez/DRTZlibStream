@@ -73,11 +73,11 @@ static const NSInteger kChunkSize = 512;
 
 - (void)readFromData:(NSData *)inData into:(NSMutableData *)outData error:(NSError *__autoreleasing *)error
 {
-  NSError *theError = nil;
-  _stream.avail_in = [inData length];
+  NSError *__autoreleasing theError = nil;
+  _stream.avail_in = (uInt) [inData length];
   _stream.next_in = (Bytef *)[inData bytes];
 
-  while (!self.isEndOfStream)
+  while (theError == nil && !self.isEndOfStream)
   {
     if (_stream.avail_in == 0)
     {
@@ -122,6 +122,11 @@ static const NSInteger kChunkSize = 512;
       [buffer setLength:_stream.total_out - previousTotalOut];
       [outData appendData:buffer];
     }
+  }
+
+  if (theError != nil && error != nil)
+  {
+    *error = theError;
   }
 }
 

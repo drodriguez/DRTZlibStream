@@ -1,0 +1,342 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		656B564916B1D4B20090AB49 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 656B564816B1D4B20090AB49 /* SenTestingKit.framework */; };
+		656B564B16B1D4B20090AB49 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 656B564A16B1D4B20090AB49 /* Cocoa.framework */; };
+		656B565516B1D4B20090AB49 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 656B565316B1D4B20090AB49 /* InfoPlist.strings */; };
+		656B567A16B1D5BB0090AB49 /* DRTZlibInflaterStreamTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 656B567916B1D5BB0090AB49 /* DRTZlibInflaterStreamTestCase.m */; };
+		656B568816B1D6570090AB49 /* DRTZlibDeflaterStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 656B568216B1D6570090AB49 /* DRTZlibDeflaterStream.m */; };
+		656B568916B1D6570090AB49 /* DRTZlibInflaterStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 656B568416B1D6570090AB49 /* DRTZlibInflaterStream.m */; };
+		656B568A16B1D6570090AB49 /* DRTZlibStreamErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 656B568716B1D6570090AB49 /* DRTZlibStreamErrors.m */; };
+		656B569716B1D7920090AB49 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 656B569616B1D7920090AB49 /* libz.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		656B564516B1D4B20090AB49 /* DRTZlibStream-Mac-Test.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DRTZlibStream-Mac-Test.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		656B564816B1D4B20090AB49 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		656B564A16B1D4B20090AB49 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		656B564D16B1D4B20090AB49 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		656B564E16B1D4B20090AB49 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		656B564F16B1D4B20090AB49 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		656B565216B1D4B20090AB49 /* DRTZlibStream-Mac-Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DRTZlibStream-Mac-Test-Info.plist"; sourceTree = "<group>"; };
+		656B565416B1D4B20090AB49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		656B565916B1D4B20090AB49 /* DRTZlibStream-Mac-Test-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DRTZlibStream-Mac-Test-Prefix.pch"; sourceTree = "<group>"; };
+		656B567816B1D5BB0090AB49 /* DRTZlibInflaterStreamTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRTZlibInflaterStreamTestCase.h; path = ../../common/DRTZlibInflaterStreamTestCase.h; sourceTree = "<group>"; };
+		656B567916B1D5BB0090AB49 /* DRTZlibInflaterStreamTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRTZlibInflaterStreamTestCase.m; path = ../../common/DRTZlibInflaterStreamTestCase.m; sourceTree = "<group>"; };
+		656B568116B1D6570090AB49 /* DRTZlibDeflaterStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRTZlibDeflaterStream.h; path = ../../../Classes/common/DRTZlibDeflaterStream.h; sourceTree = "<group>"; };
+		656B568216B1D6570090AB49 /* DRTZlibDeflaterStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRTZlibDeflaterStream.m; path = ../../../Classes/common/DRTZlibDeflaterStream.m; sourceTree = "<group>"; };
+		656B568316B1D6570090AB49 /* DRTZlibInflaterStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRTZlibInflaterStream.h; path = ../../../Classes/common/DRTZlibInflaterStream.h; sourceTree = "<group>"; };
+		656B568416B1D6570090AB49 /* DRTZlibInflaterStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRTZlibInflaterStream.m; path = ../../../Classes/common/DRTZlibInflaterStream.m; sourceTree = "<group>"; };
+		656B568516B1D6570090AB49 /* DRTZlibStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRTZlibStream.h; path = ../../../Classes/common/DRTZlibStream.h; sourceTree = "<group>"; };
+		656B568616B1D6570090AB49 /* DRTZlibStreamErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRTZlibStreamErrors.h; path = ../../../Classes/common/DRTZlibStreamErrors.h; sourceTree = "<group>"; };
+		656B568716B1D6570090AB49 /* DRTZlibStreamErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRTZlibStreamErrors.m; path = ../../../Classes/common/DRTZlibStreamErrors.m; sourceTree = "<group>"; };
+		656B569616B1D7920090AB49 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libz.dylib; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		656B564116B1D4B20090AB49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				656B569716B1D7920090AB49 /* libz.dylib in Frameworks */,
+				656B564916B1D4B20090AB49 /* SenTestingKit.framework in Frameworks */,
+				656B564B16B1D4B20090AB49 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		656B562E16B1D47C0090AB49 = {
+			isa = PBXGroup;
+			children = (
+				656B565016B1D4B20090AB49 /* DRTZlibStream-Mac-Test */,
+				656B564716B1D4B20090AB49 /* Frameworks */,
+				656B564616B1D4B20090AB49 /* Products */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
+			wrapsLines = 0;
+		};
+		656B564616B1D4B20090AB49 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				656B564516B1D4B20090AB49 /* DRTZlibStream-Mac-Test.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		656B564716B1D4B20090AB49 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				656B564A16B1D4B20090AB49 /* Cocoa.framework */,
+				656B569616B1D7920090AB49 /* libz.dylib */,
+				656B564C16B1D4B20090AB49 /* Other Frameworks */,
+				656B564816B1D4B20090AB49 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		656B564C16B1D4B20090AB49 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				656B564D16B1D4B20090AB49 /* AppKit.framework */,
+				656B564E16B1D4B20090AB49 /* CoreData.framework */,
+				656B564F16B1D4B20090AB49 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		656B565016B1D4B20090AB49 /* DRTZlibStream-Mac-Test */ = {
+			isa = PBXGroup;
+			children = (
+				656B567B16B1D5C80090AB49 /* Common */,
+				656B568016B1D6460090AB49 /* DRTZlibStream */,
+				656B565116B1D4B20090AB49 /* Supporting Files */,
+			);
+			path = "DRTZlibStream-Mac-Test";
+			sourceTree = "<group>";
+		};
+		656B565116B1D4B20090AB49 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				656B565216B1D4B20090AB49 /* DRTZlibStream-Mac-Test-Info.plist */,
+				656B565316B1D4B20090AB49 /* InfoPlist.strings */,
+				656B565916B1D4B20090AB49 /* DRTZlibStream-Mac-Test-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		656B567B16B1D5C80090AB49 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				656B567816B1D5BB0090AB49 /* DRTZlibInflaterStreamTestCase.h */,
+				656B567916B1D5BB0090AB49 /* DRTZlibInflaterStreamTestCase.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		656B568016B1D6460090AB49 /* DRTZlibStream */ = {
+			isa = PBXGroup;
+			children = (
+				656B568116B1D6570090AB49 /* DRTZlibDeflaterStream.h */,
+				656B568216B1D6570090AB49 /* DRTZlibDeflaterStream.m */,
+				656B568316B1D6570090AB49 /* DRTZlibInflaterStream.h */,
+				656B568416B1D6570090AB49 /* DRTZlibInflaterStream.m */,
+				656B568516B1D6570090AB49 /* DRTZlibStream.h */,
+				656B568616B1D6570090AB49 /* DRTZlibStreamErrors.h */,
+				656B568716B1D6570090AB49 /* DRTZlibStreamErrors.m */,
+			);
+			name = DRTZlibStream;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		656B564416B1D4B20090AB49 /* DRTZlibStream-Mac-Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 656B565A16B1D4B20090AB49 /* Build configuration list for PBXNativeTarget "DRTZlibStream-Mac-Test" */;
+			buildPhases = (
+				656B564016B1D4B20090AB49 /* Sources */,
+				656B564116B1D4B20090AB49 /* Frameworks */,
+				656B564216B1D4B20090AB49 /* Resources */,
+				656B564316B1D4B20090AB49 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DRTZlibStream-Mac-Test";
+			productName = "DRTZlibStream-Mac-Test";
+			productReference = 656B564516B1D4B20090AB49 /* DRTZlibStream-Mac-Test.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		656B563016B1D47C0090AB49 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+			};
+			buildConfigurationList = 656B563316B1D47C0090AB49 /* Build configuration list for PBXProject "DRTZlibStream-Mac" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 656B562E16B1D47C0090AB49;
+			productRefGroup = 656B564616B1D4B20090AB49 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				656B564416B1D4B20090AB49 /* DRTZlibStream-Mac-Test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		656B564216B1D4B20090AB49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				656B565516B1D4B20090AB49 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		656B564316B1D4B20090AB49 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		656B564016B1D4B20090AB49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				656B567A16B1D5BB0090AB49 /* DRTZlibInflaterStreamTestCase.m in Sources */,
+				656B568816B1D6570090AB49 /* DRTZlibDeflaterStream.m in Sources */,
+				656B568916B1D6570090AB49 /* DRTZlibInflaterStream.m in Sources */,
+				656B568A16B1D6570090AB49 /* DRTZlibStreamErrors.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		656B565316B1D4B20090AB49 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				656B565416B1D4B20090AB49 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		656B563516B1D47C0090AB49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		656B563616B1D47C0090AB49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		656B565B16B1D4B20090AB49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DRTZlibStream-Mac-Test/DRTZlibStream-Mac-Test-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "DRTZlibStream-Mac-Test/DRTZlibStream-Mac-Test-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		656B565C16B1D4B20090AB49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DRTZlibStream-Mac-Test/DRTZlibStream-Mac-Test-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "DRTZlibStream-Mac-Test/DRTZlibStream-Mac-Test-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		656B563316B1D47C0090AB49 /* Build configuration list for PBXProject "DRTZlibStream-Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				656B563516B1D47C0090AB49 /* Debug */,
+				656B563616B1D47C0090AB49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		656B565A16B1D4B20090AB49 /* Build configuration list for PBXNativeTarget "DRTZlibStream-Mac-Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				656B565B16B1D4B20090AB49 /* Debug */,
+				656B565C16B1D4B20090AB49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 656B563016B1D47C0090AB49 /* Project object */;
+}

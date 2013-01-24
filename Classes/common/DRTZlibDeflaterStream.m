@@ -78,7 +78,7 @@ static const NSInteger kChunkSize = 512;
 
 - (void)writeData:(NSData *)inData into:(NSMutableData *)outData error:(NSError *__autoreleasing *)error;
 {
-  _stream.avail_in = [inData length];
+  _stream.avail_in = (uInt) [inData length];
   _stream.next_in = (Bytef *)[inData bytes];
 
   while (_stream.avail_in > 0)
@@ -148,7 +148,10 @@ static const NSInteger kChunkSize = 512;
 - (void)finishInto:(NSMutableData *)outData error:(NSError *__autoreleasing *)error
 {
   _stream.avail_in = 0;
-  (void)[self deflateWithFlush:Z_FINISH into:outData error:error];
+  while ([self deflateWithFlush:Z_FINISH into:outData error:error] != Z_STREAM_END)
+  {
+    // nothing, just go until Z_STREAM_END
+  }
 }
 
 - (int)deflateWithFlush:(int)flush into:(NSMutableData *)outData error:(NSError *__autoreleasing *)error
