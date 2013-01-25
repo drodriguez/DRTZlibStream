@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.homepage     = 'https://github.com/drodriguez/DRTZlibStream'
   s.summary      = 'Streaming Zlib deflater and inflater for network communications.'
   s.authors      = { 'Daniel Rodríguez Troitiño' => 'drodrigueztroitino@yahoo.es' }
-  s.source       = { :git => 'https://github.com/drodriguez/DRTZlibStream.git', :branch => 'master' }
+  s.source       = { :git => 'https://github.com/drodriguez/DRTZlibStream.git', :tag => '0.0.1' }
   s.source_files = 'Classes', 'Classes/common/*.{h,m}'
   s.license      = 'MIT'
   s.library      = 'z'
