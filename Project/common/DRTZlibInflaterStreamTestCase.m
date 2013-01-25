@@ -584,4 +584,19 @@ static unsigned char testMessageBytes[] = {
   }
 }
 
+- (void)testReadFromDataInChunksShouldGenerateAllOutput
+{
+  NSUInteger chunkLength = 512U;
+  NSUInteger totalLength = [testMessageData length];
+  NSUInteger offset = 0;
+  const void *bytes = [testMessageData bytes];
+  while (offset < totalLength) {
+    NSData *chunk = [NSData dataWithBytes:bytes + offset length:chunkLength];
+    (void)[stream readFromData:chunk];
+    offset += chunkLength;
+  }
+
+  STAssertEquals(stream.totalOutputBytes, (NSInteger) 11880, @"totalOutputBytes should be 11880");
+}
+
 @end

@@ -90,7 +90,7 @@ static const NSInteger kChunkSize = 512;
     _stream.next_out = (Bytef *)[buffer mutableBytes];
 
     int err = Z_OK;
-    while (theError == nil && err != Z_BUF_ERROR && _stream.avail_out > 0)
+    while (theError == nil && err != Z_BUF_ERROR && _stream.avail_out > 0 && !self.isEndOfStream)
     {
       if (_stream.avail_in == 0)
       {

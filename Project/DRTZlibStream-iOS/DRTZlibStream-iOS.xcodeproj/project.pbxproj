@@ -16,6 +16,8 @@
 		656B569416B1D66D0090AB49 /* DRTZlibInflaterStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 656B568F16B1D66D0090AB49 /* DRTZlibInflaterStream.m */; };
 		656B569516B1D66D0090AB49 /* DRTZlibStreamErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 656B569216B1D66D0090AB49 /* DRTZlibStreamErrors.m */; };
 		656B569916B1D7AB0090AB49 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 656B569816B1D7AB0090AB49 /* libz.dylib */; };
+		656B569F16B1FBFD0090AB49 /* DRTZlibDeflaterStreamTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 656B569E16B1FBFD0090AB49 /* DRTZlibDeflaterStreamTestCase.m */; };
+		65FEE50D16B3392300710852 /* DRTZlibStreamRoundtripsTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FEE50C16B3392300710852 /* DRTZlibStreamRoundtripsTestCase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,10 @@
 		656B569116B1D66D0090AB49 /* DRTZlibStreamErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRTZlibStreamErrors.h; path = ../../../Classes/common/DRTZlibStreamErrors.h; sourceTree = "<group>"; };
 		656B569216B1D66D0090AB49 /* DRTZlibStreamErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRTZlibStreamErrors.m; path = ../../../Classes/common/DRTZlibStreamErrors.m; sourceTree = "<group>"; };
 		656B569816B1D7AB0090AB49 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/usr/lib/libz.dylib; sourceTree = DEVELOPER_DIR; };
+		656B569D16B1FBFD0090AB49 /* DRTZlibDeflaterStreamTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRTZlibDeflaterStreamTestCase.h; path = ../../common/DRTZlibDeflaterStreamTestCase.h; sourceTree = "<group>"; };
+		656B569E16B1FBFD0090AB49 /* DRTZlibDeflaterStreamTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRTZlibDeflaterStreamTestCase.m; path = ../../common/DRTZlibDeflaterStreamTestCase.m; sourceTree = "<group>"; };
+		65FEE50B16B3392300710852 /* DRTZlibStreamRoundtripsTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRTZlibStreamRoundtripsTestCase.h; path = ../../common/DRTZlibStreamRoundtripsTestCase.h; sourceTree = "<group>"; };
+		65FEE50C16B3392300710852 /* DRTZlibStreamRoundtripsTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRTZlibStreamRoundtripsTestCase.m; path = ../../common/DRTZlibStreamRoundtripsTestCase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,8 +114,12 @@
 		656B567C16B1D5DE0090AB49 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				656B569D16B1FBFD0090AB49 /* DRTZlibDeflaterStreamTestCase.h */,
+				656B569E16B1FBFD0090AB49 /* DRTZlibDeflaterStreamTestCase.m */,
 				656B567D16B1D5EE0090AB49 /* DRTZlibInflaterStreamTestCase.h */,
 				656B567E16B1D5EE0090AB49 /* DRTZlibInflaterStreamTestCase.m */,
+				65FEE50B16B3392300710852 /* DRTZlibStreamRoundtripsTestCase.h */,
+				65FEE50C16B3392300710852 /* DRTZlibStreamRoundtripsTestCase.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -210,6 +220,8 @@
 				656B569316B1D66D0090AB49 /* DRTZlibDeflaterStream.m in Sources */,
 				656B569416B1D66D0090AB49 /* DRTZlibInflaterStream.m in Sources */,
 				656B569516B1D66D0090AB49 /* DRTZlibStreamErrors.m in Sources */,
+				656B569F16B1FBFD0090AB49 /* DRTZlibDeflaterStreamTestCase.m in Sources */,
+				65FEE50D16B3392300710852 /* DRTZlibStreamRoundtripsTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +335,7 @@
 				656B567716B1D4C90090AB49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
